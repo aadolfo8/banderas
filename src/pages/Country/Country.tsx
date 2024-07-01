@@ -16,7 +16,10 @@ const CountryPage: FC<Props> = ({ ccn3 }) => {
       const { data } = await axios.get<ICountryData[]>(`https://restcountries.com/v3.1/alpha/${ccn3}`);
       setCountry(data[0]);
       console.log(data[0]);
+
+
     };
+
 
     fetchData();
   }, []);
@@ -26,7 +29,7 @@ const CountryPage: FC<Props> = ({ ccn3 }) => {
       <img
         src={country?.flags?.png || ''}
         alt={country?.name?.common || 'bandera'}
-        style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: 15 }}
+        style={{ width: '400px', height: '200px', objectFit: 'cover', borderRadius: 15 }}
       />
       {
         country?.timezones?.map((timezone) => ( 
